@@ -5,6 +5,7 @@
  * Based on tsmith512/rnf-location-service and itty-router middleware examples.
  *
  * @param request (Request) inbound request passed in from itty-router
+ * @param env (any) environment passed into CloudFlare worker
  * @returns (undefined | Response) Nothing or a 401 Unauthorized response
  */
 export const authCheck = (request: Request, env: any): undefined | Response => {
