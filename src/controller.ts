@@ -1,4 +1,5 @@
 import { name, version } from '../package.json';
+import { Request } from '@cloudflare/workers-types';
 
 export const hello = async (request: Request): Promise<Response> => {
   return new Response(
@@ -15,7 +16,7 @@ export const hello = async (request: Request): Promise<Response> => {
   );
 };
 
-export const finger = async (request: Request): Promise<Response> => {
+export const finger = async (request: Request, env: any): Promise<Response> => {
   const requestURL = new URL(request.url);
   const resourceKey = requestURL.searchParams.get('resource');
 
@@ -24,7 +25,7 @@ export const finger = async (request: Request): Promise<Response> => {
   }
 
   const email = resourceKey.replace(/^(acct:)*@*/, '');
-  const value = await WEBFINGER.get(email);
+  const value = await env.WEBFINGER.get(email);
 
   if (value === null) {
     return new Response(`Not found: ${email}`, { status: 404 });
@@ -64,11 +65,11 @@ export const fourohfour = async (): Promise<Response> => {
   return new Response('NOT FOUND', { status: 404 });
 };
 
-export const status = async (): Promise<Response> => {
+export const status = async (request: Request, env: any): Promise<Response> => {
   let result: any = undefined;
 
   try {
-    const list = await WEBFINGER.list();
+    const list = await env.WEBFINGER.list();
     result = { identity_count: list?.keys?.length };
   } catch (err) {
     result = { error: err };
@@ -88,10 +89,10 @@ export const status = async (): Promise<Response> => {
   );
 };
 
-export const list = async (): Promise<Response> => {
+export const list = async (request: Request, env: any): Promise<Response> => {
   let result: any = undefined;
   try {
-    const values = await WEBFINGER.list();
+    const values = await env.WEBFINGER.list();
     result = { list: values };
   } catch (err) {
     result = { error: err };
