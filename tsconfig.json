@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "es2022",
+    "target": "es2021",
+    "lib": ["es2021"],
+    "alwaysStrict": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "types": ["@cloudflare/workers-types", "@types/jest"],
+    "jsx": "react" /* Specify what JSX code is generated. */,
+    "allowJs": true /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */,
+    "checkJs": false /* Enable error reporting in type-checked JavaScript files. */,
+    "noEmit": true /* Disable emitting files from a compilation. */,
+    "allowSyntheticDefaultImports": true /* Allow 'import x from y' when a module doesn't have a default export. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "strict": true /* Enable all strict type-checking options. */
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,10 @@
+name = "cloudfinger"
+main = "./src/index.ts"
+compatibility_date = "2022-12-01"
+
+kv_namespaces = [
+  { binding = "WEBFINGER", id = "d9cd4fcda05f4aac91260d1bba922bee", preview_id = "d9cd4fcda05f4aac91260d1bba922bee" }
+]
+
+[vars]
+CF_API_ENDPOINT = "https://api.cloudflare.com/client/v4"
