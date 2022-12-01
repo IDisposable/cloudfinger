@@ -11,4 +11,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-If you have identified a security vulnerability, please email "Marc Brooks"<IDisposable@gmail.com> and I'll get back to you as soon as I see your report.
+If you have identified a security vulnerability, please email Marc Brooks at <IDisposable@gmail.com> and I'll get back to you as soon as I see your report.
