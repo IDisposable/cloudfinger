@@ -30,5 +30,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_DEPLOY_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          preCommands: npm install
+          preCommands: npm ci
           command: publish

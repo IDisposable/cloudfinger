@@ -1,6 +1,6 @@
 {
   "name": "cloudfinger",
-  "version": "1.0.221201.5",
+  "version": "1.0.221201.6",
   "description": "webfinger cloudflare worker",
   "scripts": {
     "format": "prettier --write .",
