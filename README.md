@@ -4,15 +4,18 @@
 
 This is a webfinger service, intended to run locally or as a [Cloudflare Worker](https://developers.cloudflare.com/workers), consumes a list of mappings from an web identity to another identity as used by services like Mastodon.
 
-The mappings are store in a [Cloudflare KV Store](https://developers.cloudflare.com/workers/runtime-apis/kv/) and should be manipulated via the Cloudflare web interface (for now).
+The mappings are store in a [Cloudflare KV Store](https://developers.cloudflare.com/workers/runtime-apis/kv/) and should be manipulated via the [Cloudflare Dashboard](https://dash.cloudflare.com) (for now).
 
-This service exposes a very simple API and lacks a frontend.
+This service exposes a very simple (read-only) API and lacks a frontend. I will be adding the rest of the API next.
 
 ### Features
 
 - Stores mappings as KV pairs, where the key the web identity like `idisposable@github365.com` and the value is the destination identity like `@idisposable@mastodon.world`. [Example](https://github365.com/.well-known/webfinger/?resource=acct:idisposable@github365.com)
-- Exposes a public endpoint at `/` that acts like a normal webfinger server and responds to the normal `?resource=acct:identity` parameter.
+- Exposes a public endpoint at `/.well-known/webfinger/` that acts like a normal webfinger server and responds to the normal `?resource=acct:identity` parameter.
 - Returns a webidentity like any normal [Mastodon Identity](https://docs.joinmastodon.org/spec/webfinger/) server without the entire infrastructure of a Mastondon install.
+- Exposes a public health endpoint at `/.well-known/webfinger/hello` that returns the worker name and version number
+- Exposes a public status endpoint at `/.well-known/webfinger/status` that returns the number of mappings in the KV store
+- Exposes a secured (via preshared auth token) API at `/api/` that current only allows `list`ing of the mappings (API to come https://github.com/IDisposable/cloudfinger/issues/2)
 
 ### Setup
 
