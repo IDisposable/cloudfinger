@@ -62,7 +62,10 @@ export const finger = async (request: Request, env: any): Promise<Response> => {
 };
 
 export const fourohfour = async (): Promise<Response> => {
-  return new Response('NOT FOUND', { status: 404 });
+  return new Response('NOT FOUND', {
+    status: 404,
+    headers: { worker: `'${name} ${version}'` },
+  });
 };
 
 export const status = async (request: Request, env: any): Promise<Response> => {
