@@ -32,14 +32,18 @@ This service exposes a very simple (read-only) API and lacks a frontend. I will 
 - `wrangler secret put CF_ACCT_ID` and paste in the ID from above to store the CloudFlare account id for the API
 - Provision a Cloudflare API token to write to it
   - On the dashboard right side, just below the account number, click [API Tokens](./docs/api-tokens-1.png) or just <https://dash.cloudflare.com/profile/api-tokens>
-  - Click [Create Token](./docs/api-tokens-2.png)
-  - Scroll down to the _Custom token_ section and click [Get started](./docs/api-tokens-3.png)
-  - Fill in the _Create Custom Token_ form
-    - Enter a name (for example _cloudfinger_)
-    - In _Permissions_ section
-      - Choose `Account`
-      - Choose `Workers KV Storage`
-      - Choose `Edit` to allow the API to update values
+  - Create a token:
+    - *Either* Quick start this [this URL](https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22workers_kv_storage%22%2C%22type%22%3A%22edit%22%7D%5D&name=cloudfinger) to prefill the form this far (thanks to [James Ross @Cherry](https://github.com/Cherry) for this [URL generator](https://cfdata.lol/tools/api-token-url-generator/) tool.)
+    - *Or* By hand
+      - Click [Create Token](./docs/api-tokens-2.png)
+      - Scroll down to the _Custom token_ section and click [Get started](./docs/api-tokens-3.png)
+      - Fill in the _Create Custom Token_ form:
+        - Enter a name (for example _cloudfinger_)
+        - In _Permissions_ section
+          - Choose `Account`
+          - Choose `Workers KV Storage`
+          - Choose `Edit` to allow the API to update values
+    - *continue either way*
     - In the _Account Resources_ section
       - Choose `Include`
       - Choose either `All Accounts` or the specific account you're building this worker for
