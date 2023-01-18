@@ -33,7 +33,7 @@ This service exposes a very simple (read-only) API and lacks a frontend. I will 
 - Provision a Cloudflare API token to write to it
   - On the dashboard right side, just below the account number, click [API Tokens](./docs/api-tokens-1.png) or just <https://dash.cloudflare.com/profile/api-tokens>
   - Create a token:
-    - _Either_ Quick start this [this URL](https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22workers_kv_storage%22%2C%22type%22%3A%22write%22%7D%5D&name=cloudfinger) to prefill the form this far (thanks to [James Ross @Cherry](https://github.com/Cherry) for this [URL generator](https://cfdata.lol/tools/api-token-url-generator/) tool.)
+    - _Either_ Quick start this [this URL](https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22workers_kv_storage%22%2C%22type%22%3A%22edit%22%7D%5D&name=cloudfinger) to prefill the form this far (thanks to [James Ross @Cherry](https://github.com/Cherry) for this [URL generator](https://cfdata.lol/tools/api-token-url-generator/) tool.)
     - _Or_ By hand
       - Click [Create Token](./docs/api-tokens-2.png)
       - Scroll down to the _Custom token_ section and click [Get started](./docs/api-tokens-3.png)
