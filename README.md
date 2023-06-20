@@ -1,4 +1,6 @@
+<!-- markdownlint-disable MD033 -->
 # CloudFinger <img src='./docs/cloudfinger.svg' title='CloudFinger Logo' width=150px height=75px />
+<!-- markdownlint-enable MD033 -->
 
 ## A WebFinger Responder
 
@@ -15,7 +17,7 @@ This service exposes a very simple (read-only) API and lacks a frontend. I will 
 - Returns a webidentity like any normal [Mastodon Identity](https://docs.joinmastodon.org/spec/webfinger/) server without the entire infrastructure of a Mastondon install.
 - Exposes a public health endpoint at `/.well-known/webfinger/hello` that returns the worker name and version number
 - Exposes a public status endpoint at `/.well-known/webfinger/status` that returns the number of mappings in the KV store
-- Exposes a secured (via preshared auth token) API at `/api/` that current only allows `list`ing of the mappings (API to come https://github.com/IDisposable/cloudfinger/issues/2)
+- Exposes a secured (via preshared auth token) API at `/api/` that current only allows `list`ing of the mappings [API to come](https://github.com/IDisposable/cloudfinger/issues/2)
 
 ### Setup
 
