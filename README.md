@@ -1,5 +1,7 @@
 <!-- markdownlint-disable MD033 -->
+
 # CloudFinger <img src='./docs/cloudfinger.svg' title='CloudFinger Logo' width=150px height=75px />
+
 <!-- markdownlint-enable MD033 -->
 
 ## A WebFinger Responder
